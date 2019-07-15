@@ -4,13 +4,13 @@ import (
 	"math"
 )
 
-type Ijk struct {
+type ijk struct {
 	i int
 	j int
 	k int
 }
 
-func bingo(data Ijk) (bool, int64) {
+func bingo(data ijk) (bool, int64) {
 	act := concat(data)
 	exp := int64(data.i*data.i*data.i) + int64(data.j*data.j*data.j) + int64(data.k*data.k*data.k)
 	return exp == act, act
@@ -43,7 +43,7 @@ func width(i int) int {
 	return int(math.Log10(float64(i))) + 1
 }
 
-func concat(data Ijk) int64 {
+func concat(data ijk) int64 {
 	widthj := width(data.j)
 	widthk := width(data.k)
 	parti := int64(data.i) * pow(10, widthj+widthk)

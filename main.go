@@ -13,7 +13,7 @@ import (
 var chunks int
 var max int
 
-func check(data Ijk) {
+func check(data ijk) {
 	isOk, word := bingo(data)
 	if isOk {
 		fmt.Println(data, "=", word)
@@ -26,7 +26,7 @@ func doIt(from int, to int, max int, wg *sync.WaitGroup) {
 	for i := from; i < to; i++ {
 		for j := 1; j < max; j++ {
 			for k := 1; k < max; k++ {
-				check(Ijk{i, j, k})
+				check(ijk{i, j, k})
 			}
 		}
 	}
